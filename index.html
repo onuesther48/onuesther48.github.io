@@ -17,8 +17,32 @@
             scroll-behavior: smooth;
         }
         
+        body {
+            background: linear-gradient(to bottom, #f8f9ff 0%, #ffffff 100%);
+        }
+        
+        /* Gradients and Colors */
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
         }
         
         .gradient-text {
@@ -28,87 +52,270 @@
             background-clip: text;
         }
         
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Enhanced card hover */
         .card-hover {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: inherit;
+            z-index: 0;
+        }
+        
+        .card-hover:hover::before {
+            opacity: 1;
         }
         
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.25);
         }
         
+        /* Fade in animations */
         .fade-in {
             animation: fadeIn 1s ease-in;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* Navigation */
         .nav-link {
             position: relative;
+            transition: color 0.3s ease;
         }
         
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: #667eea;
+            height: 3px;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             transition: width 0.3s ease;
+            border-radius: 2px;
         }
         
         .nav-link:hover::after {
             width: 100%;
         }
         
+        /* Hero section */
         .hero-pattern {
-            background-color: #667eea;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
         }
         
+        .hero-pattern::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: bgScroll 60s linear infinite;
+        }
+        
+        @keyframes bgScroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        .hero-pattern::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #f8f9ff);
+        }
+        
+        /* Profile image effects */
+        .profile-glow {
+            position: relative;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .profile-glow::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.3;
+            filter: blur(20px);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        /* Post cards */
         .post-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
+        .post-card:hover {
+            transform: translateY(-15px) rotate(-1deg);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+        }
+        
+        .post-card img {
+            transition: transform 0.6s ease;
+        }
+        
+        .post-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Badges */
         .badge {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
+            padding: 0.4rem 1rem;
             border-radius: 9999px;
             font-size: 0.875rem;
-            font-weight: 500;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         
         .skill-badge {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Section dividers */
+        .section-divider {
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 3rem;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Floating animation for icons */
+        .float {
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Experience timeline */
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* Scroll reveal */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Background decoration */
+        .bg-decoration {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-pattern {
+            .hero-pattern::before {
                 background-size: 30px 30px;
+            }
+            
+            .card-hover:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+            
+            .post-card:hover {
+                transform: translateY(-8px) rotate(0deg);
             }
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <nav class="glass fixed w-full top-0 z-50 shadow-lg">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="text-2xl font-bold gradient-text">Chidubem Esther Onu</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium">About</a>
-                    <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Experience</a>
-                    <a href="#scrubs2screens" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Scrubs2Screens</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Contact</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-semibold">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-semibold">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-semibold">Experience</a>
+                    <a href="#scrubs2screens" class="nav-link text-gray-700 hover:text-purple-600 font-semibold">Scrubs2Screens</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-semibold">Contact</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-700">
                     <i class="fas fa-bars text-2xl"></i>
@@ -116,36 +323,72 @@
             </div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#home" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
-                <a href="#about" class="block py-2 text-gray-700 hover:text-purple-600">About</a>
-                <a href="#experience" class="block py-2 text-gray-700 hover:text-purple-600">Experience</a>
-                <a href="#scrubs2screens" class="block py-2 text-gray-700 hover:text-purple-600">Scrubs2Screens</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
+                <a href="#home" class="block py-2 text-gray-700 hover:text-purple-600 font-semibold">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-purple-600 font-semibold">About</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-purple-600 font-semibold">Experience</a>
+                <a href="#scrubs2screens" class="block py-2 text-gray-700 hover:text-purple-600 font-semibold">Scrubs2Screens</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-purple-600 font-semibold">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-pattern pt-32 pb-20 text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-4">Chidubem Esther Onu</h1>
-                    <p class="text-xl md:text-2xl mb-6 font-light">Registered Nurse (Renal) | Telehealth & Virtual Care Specialist</p>
-                    <p class="text-lg mb-8 leading-relaxed">EMR/EHR Specialist | Patient Education & Remote Monitoring Expert</p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Get In Touch</a>
-                        <a href="#about" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300">Learn More</a>
+    <section id="home" class="hero-pattern pt-32 pb-24 text-white relative">
+        <div class="bg-decoration" style="top: 10%; left: 5%; width: 400px; height: 400px; background: #764ba2;"></div>
+        <div class="bg-decoration" style="bottom: 10%; right: 5%; width: 300px; height: 300px; background: #667eea;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 space-y-6 fade-in">
+                    <div class="inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full backdrop-blur-sm mb-2">
+                        <span class="text-sm font-semibold">🩺 Healthcare Professional</span>
                     </div>
-                    <div class="mt-8 flex space-x-4">
-                        <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" class="text-white hover:text-gray-200 transition"><i class="fab fa-linkedin text-3xl"></i></a>
-                        <a href="mailto:onuesther48@gmail.com" class="text-white hover:text-gray-200 transition"><i class="fas fa-envelope text-3xl"></i></a>
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                        Chidubem<br/>Esther Onu
+                    </h1>
+                    <div class="space-y-3">
+                        <p class="text-xl md:text-2xl font-light flex items-center">
+                            <i class="fas fa-stethoscope mr-3"></i>
+                            Registered Nurse (Renal)
+                        </p>
+                        <p class="text-xl md:text-2xl font-light flex items-center">
+                            <i class="fas fa-laptop-medical mr-3"></i>
+                            Telehealth & Virtual Care Specialist
+                        </p>
+                        <p class="text-lg font-light flex items-center">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            EMR/EHR Specialist | Patient Education Expert
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition duration-300 shadow-2xl">
+                            <i class="fas fa-paper-plane mr-2"></i>Get In Touch
+                        </a>
+                        <a href="#about" class="glass text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition duration-300">
+                            <i class="fas fa-user mr-2"></i>Learn More
+                        </a>
+                    </div>
+                    <div class="flex space-x-6 pt-4">
+                        <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" 
+                           class="w-14 h-14 flex items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition float">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="mailto:onuesther48@gmail.com" 
+                           class="w-14 h-14 flex items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition float" style="animation-delay: 0.3s;">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center fade-in">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-white rounded-full blur-3xl opacity-20"></div>
-                        <img src="assets/images/profile.jpg" alt="Chidubem Esther Onu" class="relative rounded-full w-80 h-80 object-cover border-8 border-white shadow-2xl">
+                    <div class="relative profile-glow">
+                        <img src="assets/images/profile.jpg" alt="Chidubem Esther Onu" 
+                             class="relative rounded-full w-80 h-80 md:w-96 md:h-96 object-cover border-8 border-white shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-2xl">
+                            <div class="text-center">
+                                <p class="text-3xl font-bold gradient-text">3+</p>
+                                <p class="text-xs text-gray-600 font-semibold">Years NHS</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,62 +396,80 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">About Me</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="bg-decoration" style="top: 20%; right: -10%; width: 500px; height: 500px; background: #667eea;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                    <span class="text-sm font-bold gradient-text">WHO I AM</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-extrabold gradient-text mb-4">About Me</h2>
+                <div class="section-divider"></div>
+            </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 card-hover">
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        I am a <strong>Registered General Nurse</strong> with experience in renal care, delivering high-quality, patient-centred care in acute ward settings. My background in managing chronic kidney disease, dialysis patients, and complex comorbidities has strengthened my clinical assessment, patient education, and care coordination skills.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        I am now transitioning into <strong>telemedicine and remote healthcare roles</strong>, where I can combine my clinical expertise with digital health systems. I am proficient in EMR/EHR platforms, comfortable with virtual documentation workflows, and fully compliant with HIPAA standards.
-                    </p>
+            <div class="max-w-5xl mx-auto">
+                <div class="glass rounded-3xl shadow-2xl p-10 md:p-16 card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full -mr-32 -mt-32 opacity-50"></div>
                     
-                    <h3 class="text-2xl font-bold mb-4 mt-8 gradient-text">Key Strengths</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
-                            <span class="text-gray-700">Chronic disease management</span>
+                    <div class="relative z-10">
+                        <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+                            I am a <strong class="gradient-text">Registered General Nurse</strong> with experience in renal care, delivering high-quality, patient-centred care in acute ward settings. My background in managing chronic kidney disease, dialysis patients, and complex comorbidities has strengthened my clinical assessment, patient education, and care coordination skills.
+                        </p>
+                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                            I am now transitioning into <strong class="gradient-text">telemedicine and remote healthcare roles</strong>, where I can combine my clinical expertise with digital health systems. I am proficient in EMR/EHR platforms, comfortable with virtual documentation workflows, and fully compliant with HIPAA standards.
+                        </p>
+                    
+                    <h3 class="text-3xl font-bold mb-6 mt-12 gradient-text flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-3"></i>
+                        Key Strengths
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:shadow-lg transition">
+                            <i class="fas fa-check-circle text-purple-600 text-2xl mt-1 mr-4"></i>
+                            <span class="text-gray-800 font-medium">Chronic disease management</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
-                            <span class="text-gray-700">Patient education and self-management support</span>
+                        <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:shadow-lg transition">
+                            <i class="fas fa-check-circle text-purple-600 text-2xl mt-1 mr-4"></i>
+                            <span class="text-gray-800 font-medium">Patient education and self-management support</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
-                            <span class="text-gray-700">Clinical documentation and data accuracy</span>
+                        <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:shadow-lg transition">
+                            <i class="fas fa-check-circle text-purple-600 text-2xl mt-1 mr-4"></i>
+                            <span class="text-gray-800 font-medium">Clinical documentation and data accuracy</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
-                            <span class="text-gray-700">Multidisciplinary communication</span>
+                        <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:shadow-lg transition">
+                            <i class="fas fa-check-circle text-purple-600 text-2xl mt-1 mr-4"></i>
+                            <span class="text-gray-800 font-medium">Multidisciplinary communication</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
-                            <span class="text-gray-700">Technology-enabled care delivery</span>
+                        <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:shadow-lg transition">
+                            <i class="fas fa-check-circle text-purple-600 text-2xl mt-1 mr-4"></i>
+                            <span class="text-gray-800 font-medium">Technology-enabled care delivery</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
-                            <span class="text-gray-700">Care coordination</span>
+                        <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:shadow-lg transition">
+                            <i class="fas fa-check-circle text-purple-600 text-2xl mt-1 mr-4"></i>
+                            <span class="text-gray-800 font-medium">Care coordination</span>
                         </div>
                     </div>
                     
-                    <p class="text-lg text-gray-700 mt-8 leading-relaxed">
-                        I am particularly interested in <strong>telehealth nursing, virtual triage, care coordination, and remote chronic disease management roles</strong>.
+                    <p class="text-xl text-gray-700 mt-10 leading-relaxed text-center p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl">
+                        <i class="fas fa-heart text-red-500 mr-2"></i>
+                        I am particularly interested in <strong class="gradient-text">telehealth nursing, virtual triage, care coordination, and remote chronic disease management roles</strong>.
                     </p>
                     
-                    <h3 class="text-2xl font-bold mb-4 mt-8 gradient-text">Top Skills</h3>
+                    <h3 class="text-3xl font-bold mb-6 mt-12 gradient-text flex items-center">
+                        <i class="fas fa-certificate text-purple-600 mr-3"></i>
+                        Top Skills
+                    </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="badge skill-badge">Management</span>
-                        <span class="badge skill-badge">Nursing</span>
-                        <span class="badge skill-badge">Communication</span>
-                        <span class="badge skill-badge">Health Promotion</span>
-                        <span class="badge skill-badge">Clinical Documentation</span>
-                        <span class="badge skill-badge">EMR/EHR Systems</span>
-                        <span class="badge skill-badge">Telehealth</span>
-                        <span class="badge skill-badge">Patient Education</span>
+                        <span class="badge skill-badge">💼 Management</span>
+                        <span class="badge skill-badge">🩺 Nursing</span>
+                        <span class="badge skill-badge">💬 Communication</span>
+                        <span class="badge skill-badge">❤️ Health Promotion</span>
+                        <span class="badge skill-badge">📋 Clinical Documentation</span>
+                        <span class="badge skill-badge">💻 EMR/EHR Systems</span>
+                        <span class="badge skill-badge">📱 Telehealth</span>
+                        <span class="badge skill-badge">📚 Patient Education</span>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -216,10 +477,17 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Experience</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+    <section id="experience" class="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div class="bg-decoration" style="top: 30%; left: -10%; width: 400px; height: 400px; background: #764ba2;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                    <span class="text-sm font-bold gradient-text">MY JOURNEY</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-extrabold gradient-text mb-4">Experience</h2>
+                <div class="section-divider"></div>
+            </div>
             
             <div class="max-w-4xl mx-auto space-y-8">
                 <!-- Experience Item 1 -->
@@ -342,11 +610,20 @@
     </section>
 
     <!-- Scrubs2Screens Section -->
-    <section id="scrubs2screens" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Scrubs2Screens Posts</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-4"></div>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Documenting my journey from bedside to virtual care through the Scrubs2Screens community - sharing insights on telehealth, digital health, and the future of nursing.</p>
+    <section id="scrubs2screens" class="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
+        <div class="bg-decoration" style="top: 10%; right: -5%; width: 600px; height: 600px; background: #667eea;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                    <span class="text-sm font-bold gradient-text">✨ MY TRANSITION JOURNEY</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-extrabold gradient-text mb-4">Scrubs2Screens</h2>
+                <div class="section-divider"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Documenting my journey from bedside to virtual care through the Scrubs2Screens community — sharing insights on telehealth, digital health, and the future of nursing.
+                </p>
+            </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Post 1 -->
@@ -554,46 +831,53 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Get In Touch</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="bg-decoration" style="top: 50%; left: 50%; width: 800px; height: 800px; background: #764ba2; transform: translate(-50%, -50%);"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                    <span class="text-sm font-bold gradient-text">LET'S CONNECT</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-extrabold gradient-text mb-4">Get In Touch</h2>
+                <div class="section-divider"></div>
+            </div>
             
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                    <p class="text-center text-gray-700 text-lg mb-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="glass rounded-3xl shadow-2xl p-10 md:p-16 card-hover">
+                    <p class="text-center text-gray-700 text-xl mb-10 leading-relaxed">
                         Interested in connecting? I'm open to discussing telehealth opportunities, virtual care collaborations, or sharing insights about transitioning from bedside to digital health.
                     </p>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-8">
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" 
-                               class="flex items-center space-x-3 bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg w-full sm:w-auto justify-center">
-                                <i class="fab fa-linkedin text-2xl"></i>
-                                <span class="font-semibold">Connect on LinkedIn</span>
+                               class="btn-primary flex items-center space-x-3 text-white px-10 py-5 rounded-full transition duration-300 shadow-2xl w-full sm:w-auto justify-center font-bold text-lg">
+                                <i class="fab fa-linkedin text-3xl"></i>
+                                <span>Connect on LinkedIn</span>
                             </a>
                             <a href="mailto:onuesther48@gmail.com" 
-                               class="flex items-center space-x-3 bg-purple-600 text-white px-8 py-4 rounded-full hover:bg-purple-700 transition duration-300 shadow-lg w-full sm:w-auto justify-center">
-                                <i class="fas fa-envelope text-2xl"></i>
-                                <span class="font-semibold">Send Email</span>
+                               class="btn-primary flex items-center space-x-3 text-white px-10 py-5 rounded-full transition duration-300 shadow-2xl w-full sm:w-auto justify-center font-bold text-lg">
+                                <i class="fas fa-envelope text-3xl"></i>
+                                <span>Send Email</span>
                             </a>
                         </div>
                         
-                        <div class="text-center">
-                            <p class="text-gray-600 mb-4">Currently based in:</p>
-                            <p class="text-xl font-semibold text-gray-800">
-                                <i class="fas fa-map-marker-alt text-purple-600 mr-2"></i>
+                        <div class="text-center py-8">
+                            <p class="text-gray-600 mb-4 text-lg font-semibold">📍 Currently based in:</p>
+                            <p class="text-3xl font-bold gradient-text flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt mr-3"></i>
                                 United Kingdom
                             </p>
                         </div>
                         
-                        <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 mt-8">
-                            <p class="text-center text-gray-700">
-                                <i class="fas fa-briefcase text-purple-600 mr-2"></i>
-                                Currently at: <strong>Royal Wolverhampton Hospitals NHS Trust</strong>
+                        <div class="bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 shadow-lg">
+                            <p class="text-center text-gray-800 text-lg mb-3">
+                                <i class="fas fa-briefcase text-purple-600 mr-2 text-2xl"></i>
                             </p>
-                            <p class="text-center text-gray-600 mt-2">
-                                Transitioning to telehealth and remote patient care roles
+                            <p class="text-center font-bold text-xl gradient-text mb-2">Royal Wolverhampton Hospitals NHS Trust</p>
+                            <p class="text-center text-gray-600 text-lg">
+                                🚀 Transitioning to telehealth and remote patient care roles
                             </p>
                         </div>
                     </div>
@@ -603,25 +887,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="gradient-bg text-white py-8">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="text-lg font-semibold">Chidubem Esther Onu</p>
+    <footer class="gradient-bg text-white py-12 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <p class="text-2xl font-bold mb-2">Chidubem Esther Onu</p>
                     <p class="text-sm opacity-90">Registered Nurse | Telehealth Specialist</p>
+                    <p class="text-sm opacity-75 mt-2">💙 From Scrubs to Screens</p>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" class="hover:opacity-75 transition">
+                    <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" 
+                       class="w-12 h-12 flex items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition">
                         <i class="fab fa-linkedin text-2xl"></i>
                     </a>
-                    <a href="#home" class="hover:opacity-75 transition">
+                    <a href="mailto:onuesther48@gmail.com" 
+                       class="w-12 h-12 flex items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="#home" 
+                       class="w-12 h-12 flex items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition">
                         <i class="fas fa-arrow-up text-2xl"></i>
                     </a>
                 </div>
             </div>
-            <div class="border-t border-white border-opacity-20 mt-6 pt-6 text-center">
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center">
                 <p class="text-sm opacity-75">&copy; 2026 Chidubem Esther Onu. All rights reserved.</p>
-                <p class="text-xs opacity-75 mt-2">#Scrubs2Screens Journey | From Bedside to Virtual Care</p>
+                <p class="text-xs opacity-75 mt-2">#Scrubs2Screens Journey | Empowering Healthcare Through Technology</p>
             </div>
         </div>
     </footer>
@@ -659,20 +950,25 @@
             });
         });
         
-        // Add scroll effect to navbar
+        // Enhanced navbar scroll effect
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                nav.classList.add('shadow-2xl');
             } else {
-                nav.classList.remove('shadow-lg');
+                nav.classList.remove('shadow-2xl');
             }
+            
+            lastScroll = currentScroll;
         });
         
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for scroll reveal animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
@@ -680,17 +976,80 @@
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('active');
                 }
             });
         }, observerOptions);
         
-        // Observe all cards
-        document.querySelectorAll('.card-hover, .post-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease-out';
-            observer.observe(card);
+        // Observe all cards and animated elements
+        document.querySelectorAll('.card-hover, .post-card, .scroll-reveal').forEach(el => {
+            el.classList.add('scroll-reveal');
+            observer.observe(el);
         });
+        
+        // Parallax effect for background decorations
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const decorations = document.querySelectorAll('.bg-decoration');
+            
+            decorations.forEach((decoration, index) => {
+                const speed = 0.5 + (index * 0.1);
+                decoration.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Add stagger animation to cards
+        const cards = document.querySelectorAll('.card-hover, .post-card');
+        cards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+        
+        // Counter animation for experience years
+        const counter = document.querySelector('.profile-glow .text-3xl');
+        if (counter) {
+            let count = 0;
+            const target = 3;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            
+            const updateCounter = () => {
+                count += increment;
+                if (count < target) {
+                    counter.textContent = Math.floor(count) + '+';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + '+';
+                }
+            };
+            
+            // Start counter when in view
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        counterObserver.disconnect();
+                    }
+                });
+            });
+            
+            counterObserver.observe(counter);
+        }
+        
+        // Add hover effect sound feedback (visual pulse)
+        document.querySelectorAll('.btn-primary, .skill-badge').forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            });
+        });
+        
+        // Typing effect for hero section (optional enhancement)
+        const heroText = document.querySelector('.hero-pattern h1');
+        if (heroText) {
+            heroText.style.opacity = '1';
+        }
     </script>
 </body>
 </html>
