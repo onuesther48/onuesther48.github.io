@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidubem Esther Onu - Registered Nurse & Telehealth Specialist</title>
+    <meta name="description" content="Chidubem Esther Onu - Registered Nurse specializing in Renal Care, Telehealth & Virtual Care, EMR/EHR Specialist">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-pattern {
+            background-color: #667eea;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .post-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-pattern {
+                background-size: 30px 30px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">Chidubem Esther Onu</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Experience</a>
+                    <a href="#scrubs2screens" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Scrubs2Screens</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-purple-600">About</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-purple-600">Experience</a>
+                <a href="#scrubs2screens" class="block py-2 text-gray-700 hover:text-purple-600">Scrubs2Screens</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-32 pb-20 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4">Chidubem Esther Onu</h1>
+                    <p class="text-xl md:text-2xl mb-6 font-light">Registered Nurse (Renal) | Telehealth & Virtual Care Specialist</p>
+                    <p class="text-lg mb-8 leading-relaxed">EMR/EHR Specialist | Patient Education & Remote Monitoring Expert</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Get In Touch</a>
+                        <a href="#about" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300">Learn More</a>
+                    </div>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" class="text-white hover:text-gray-200 transition"><i class="fab fa-linkedin text-3xl"></i></a>
+                        <a href="mailto:contact@example.com" class="text-white hover:text-gray-200 transition"><i class="fas fa-envelope text-3xl"></i></a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center fade-in">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-white rounded-full blur-3xl opacity-20"></div>
+                        <img src="assets/images/profile.jpg" alt="Chidubem Esther Onu" class="relative rounded-full w-80 h-80 object-cover border-8 border-white shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">About Me</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 card-hover">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        I am a <strong>Registered General Nurse</strong> with experience in renal care, delivering high-quality, patient-centred care in acute ward settings. My background in managing chronic kidney disease, dialysis patients, and complex comorbidities has strengthened my clinical assessment, patient education, and care coordination skills.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        I am now transitioning into <strong>telemedicine and remote healthcare roles</strong>, where I can combine my clinical expertise with digital health systems. I am proficient in EMR/EHR platforms, comfortable with virtual documentation workflows, and fully compliant with HIPAA standards.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 mt-8 gradient-text">Key Strengths</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
+                            <span class="text-gray-700">Chronic disease management</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
+                            <span class="text-gray-700">Patient education and self-management support</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
+                            <span class="text-gray-700">Clinical documentation and data accuracy</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
+                            <span class="text-gray-700">Multidisciplinary communication</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
+                            <span class="text-gray-700">Technology-enabled care delivery</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 text-xl mt-1 mr-3"></i>
+                            <span class="text-gray-700">Care coordination</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-gray-700 mt-8 leading-relaxed">
+                        I am particularly interested in <strong>telehealth nursing, virtual triage, care coordination, and remote chronic disease management roles</strong>.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 mt-8 gradient-text">Top Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="badge skill-badge">Management</span>
+                        <span class="badge skill-badge">Nursing</span>
+                        <span class="badge skill-badge">Communication</span>
+                        <span class="badge skill-badge">Health Promotion</span>
+                        <span class="badge skill-badge">Clinical Documentation</span>
+                        <span class="badge skill-badge">EMR/EHR Systems</span>
+                        <span class="badge skill-badge">Telehealth</span>
+                        <span class="badge skill-badge">Patient Education</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Experience</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">Registered Nurse</h3>
+                            <p class="text-purple-600 font-semibold">Royal Wolverhampton Hospitals NHS Trust</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <i class="fas fa-calendar-alt mr-2"></i>Sep 2022 - Present · 3 yrs 7 mos
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>United Kingdom · On-site</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge bg-purple-100 text-purple-700">Nursing Process</span>
+                        <span class="badge bg-purple-100 text-purple-700">Nursing Education</span>
+                        <span class="badge bg-purple-100 text-purple-700">Renal Care</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">Nursing Officer</h3>
+                            <p class="text-purple-600 font-semibold">Grandville Medical and Laser</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <i class="fas fa-calendar-alt mr-2"></i>Feb 2021 - Nov 2023 · 2 yrs 10 mos
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Lagos State, Nigeria</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge bg-purple-100 text-purple-700">Nursing Education</span>
+                        <span class="badge bg-purple-100 text-purple-700">Management</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">School Nurse</h3>
+                            <p class="text-purple-600 font-semibold">HCC Ikoyi</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <i class="fas fa-calendar-alt mr-2"></i>Aug 2020 - Jan 2021 · 6 mos
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Lagos State, Nigeria · Part-time</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge bg-purple-100 text-purple-700">Health Promotion</span>
+                        <span class="badge bg-purple-100 text-purple-700">Nursing Education</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">Registered Nurse</h3>
+                            <p class="text-purple-600 font-semibold">Citizen Medical Centre</p>
+                        </div>
+                        <div class="text-gray-600 mt-2 md:mt-0">
+                            <i class="fas fa-calendar-alt mr-2"></i>Dec 2019 - Dec 2020 · 1 yr 1 mo
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge bg-purple-100 text-purple-700">Nursing Education</span>
+                        <span class="badge bg-purple-100 text-purple-700">Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Education</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Education Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="flex items-start">
+                        <div class="bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg p-4 mr-6">
+                            <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Bachelor's degree, Nursing Science</h3>
+                            <p class="text-purple-600 font-semibold text-lg mb-2">University of Derby</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="badge bg-purple-100 text-purple-700">Medical-Surgical</span>
+                                <span class="badge bg-purple-100 text-purple-700">Acute Care</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+                    <div class="flex items-start">
+                        <div class="bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg p-4 mr-6">
+                            <i class="fas fa-certificate text-white text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Diploma, Nursing Science</h3>
+                            <p class="text-purple-600 font-semibold text-lg mb-2">School of Nursing NAUTH Nnewi, Anambra State, Nigeria</p>
+                            <p class="text-gray-600"><i class="fas fa-calendar-alt mr-2"></i>2016 - 2019</p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="badge bg-purple-100 text-purple-700">Nursing Education</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrubs2Screens Section -->
+    <section id="scrubs2screens" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Scrubs2Screens Posts</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-4"></div>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Documenting my journey from bedside to virtual care through the Scrubs2Screens community - sharing insights on telehealth, digital health, and the future of nursing.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">13 hours ago</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Growth is showing up smarter</h3>
+                        <p class="text-gray-700 mb-4">
+                            The biggest lesson I've learned about growth and career positioning: Growth is not just about working harder, it's about showing up smarter. Building meaningful professional relationships and aligning skills with future goals.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Telenursing</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#NurseLife</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">Day 29</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Community & Collaboration in Healthcare</h3>
+                        <p class="text-gray-700 mb-4">
+                            In healthcare, no single professional has all the answers. True collaboration brings better patient outcomes, holistic care, reduced inefficiencies, and stronger support systems. Healthcare isn't a solo sport—it's a team effort that truly saves lives.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#HealthcareCollaboration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">Day 28</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Telenursing IS Real Nursing</h3>
+                        <p class="text-gray-700 mb-4">
+                            "Telenursing isn't real nursing..." I've heard it before. Just your voice, questions, and clinical judgment. Virtual care forces you to sharpen what really matters—how you think, listen, and decide. Digital health isn't replacing nurses, it's just changing how we show up.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Telenursing</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#DigitalHealth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 4 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">3 days ago</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Future of Healthcare</h3>
+                        <p class="text-gray-700 mb-4">
+                            The future of healthcare isn't just about treatment—it's about prevention, connection, and continuity. Particularly interested in its impact on public health—improving access, supporting self-management, and enhancing long-term outcomes.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#DigitalHealth</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#PublicHealth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 5 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">4 days ago</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">What Matters in Telehealth</h3>
+                        <p class="text-gray-700 mb-4">
+                            Telehealth isn't just nursing through a screen. It's nursing with the volume turned up on every skill that didn't require your hands. Virtual care documentation needs to be airtight. The nurses who thrive brought everything with them and learned to use it differently.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Telehealth</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#VirtualCare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 6 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">Day 24</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Questioning Nursing Sustainability</h3>
+                        <p class="text-gray-700 mb-4">
+                            I don't hate nursing. But I'm starting to question what it's costing me. By Sunday night, I'm not fully resting—part of me is already bracing. Is this sustainable long-term? There are other ways to be a nurse that might offer better work-life balance.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#NurseBurnout</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 7 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">Day 23</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Health in Africa</h3>
+                        <p class="text-gray-700 mb-4">
+                            Why Africa Needs Stronger Digital Health Systems. Exploring the gaps and opportunities for nurses and clinicians working in digital health across the African continent. The potential for transformation is immense.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#DigitalHealth</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#AfricaHealth</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 8 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">Day 22</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Gratitude Post 💙</h3>
+                        <p class="text-gray-700 mb-4">
+                            This journey has been made easier and more meaningful because of all of you. Grateful for the nursing community, mentors, and everyone supporting this transition from scrubs to screens.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Telenursing</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Gratitude</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 9 -->
+                <div class="post-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                CE
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Chidubem Esther Onu</p>
+                                <p class="text-sm text-gray-500">Day 21</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Would YOU Consider Remote Nursing?</h3>
+                        <p class="text-gray-700 mb-4">
+                            Bedside nursing felt like the only "real" nursing. But the more I learn about telenursing, the more I realize: The skills transfer. The impact is just as real. Remote nurses are triaging, coaching, catching deterioration, and reaching patients who can't get to a clinic.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Telenursing</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#RemoteNursing</span>
+                            <span class="text-xs badge bg-purple-100 text-purple-700">#Scrubs2Screens</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Get In Touch</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-12"></div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <p class="text-center text-gray-700 text-lg mb-8">
+                        Interested in connecting? I'm open to discussing telehealth opportunities, virtual care collaborations, or sharing insights about transitioning from bedside to digital health.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-center space-x-4">
+                            <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" 
+                               class="flex items-center space-x-3 bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                                <span class="font-semibold">Connect on LinkedIn</span>
+                            </a>
+                        </div>
+                        
+                        <div class="text-center">
+                            <p class="text-gray-600 mb-4">Currently based in:</p>
+                            <p class="text-xl font-semibold text-gray-800">
+                                <i class="fas fa-map-marker-alt text-purple-600 mr-2"></i>
+                                United Kingdom
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 mt-8">
+                            <p class="text-center text-gray-700">
+                                <i class="fas fa-briefcase text-purple-600 mr-2"></i>
+                                Currently at: <strong>Royal Wolverhampton Hospitals NHS Trust</strong>
+                            </p>
+                            <p class="text-center text-gray-600 mt-2">
+                                Transitioning to telehealth and remote patient care roles
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-lg font-semibold">Chidubem Esther Onu</p>
+                    <p class="text-sm opacity-90">Registered Nurse | Telehealth Specialist</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/chidubem-esther-onu-b189151b0" target="_blank" class="hover:opacity-75 transition">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#home" class="hover:opacity-75 transition">
+                        <i class="fas fa-arrow-up text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-6 pt-6 text-center">
+                <p class="text-sm opacity-75">&copy; 2026 Chidubem Esther Onu. All rights reserved.</p>
+                <p class="text-xs opacity-75 mt-2">#Scrubs2Screens Journey | From Bedside to Virtual Care</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards
+        document.querySelectorAll('.card-hover, .post-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
